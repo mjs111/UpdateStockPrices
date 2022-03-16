@@ -17,7 +17,7 @@ for file in dir_list:
         print("Opening", file)
 
         wb = openpyxl.load_workbook(dir + file)
-        # ws = wb.active                    #price is on is always the first sheet, so can go with active
+        # ws = wb.active                    # can't depend that workbook will be saved with the correct sheet active
         ws = wb["Valuation"]  # set active worksheet explicitly
 
         stock_ticker = ws["C4"].value  # get stock ticker from spreadsheet
